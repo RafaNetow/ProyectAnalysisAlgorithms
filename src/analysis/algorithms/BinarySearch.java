@@ -9,6 +9,13 @@ package analysis.algorithms;
  *
  * @author Rafael
  */
-public class QuickSort {
+public class BinarySearch extends Algorithm {
+
+    @Override
+    void evaluateAlgorithm(int[] array) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
     
 }

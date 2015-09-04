@@ -5,17 +5,18 @@
  */
 package analysis.algorithms;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author Rafael
  */
-public class AnalysisAlgorithms {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+public class Main  {
+    public Main(){
+        Principal a = new Principal();
+        a.setVisible(true);
     }
-    
+    public static void main(String args[]){
+       new Main(); 
+    }
 }

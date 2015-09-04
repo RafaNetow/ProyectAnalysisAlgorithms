@@ -5,10 +5,14 @@
  */
 package analysis.algorithms;
 
+import java.util.List;
+
 /**
  *
  * @author Rafael
  */
-public class ConsoleTesting {
+public abstract class Algorithm {
+    List<Object> steps;
+    abstract void evaluateAlgorithm(int array[]);
     
 }
