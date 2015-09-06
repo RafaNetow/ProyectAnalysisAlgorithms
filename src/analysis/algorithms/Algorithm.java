@@ -5,6 +5,7 @@
  */
 package analysis.algorithms;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,7 +13,18 @@ import java.util.List;
  * @author Rafael
  */
 public abstract class Algorithm {
-    List<Object> steps;
+    
+    
+    
+    List<StepAlgorithms> steps;
+
+    public void setSteps(List<StepAlgorithms> steps) {
+        this.steps = steps;
+    }
+    
+public Algorithm(){
+    steps = new ArrayList<StepAlgorithms>();
+}   
     abstract void evaluateAlgorithm(int array[]);
     
 }

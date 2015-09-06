@@ -5,14 +5,19 @@
  */
 package analysis.algorithms;
 
+import java.util.List;
+
 /**
  *
  * @author Rafael
  */
 public class QuickSort extends Algorithm {
 
+   
+    
+    
     @Override
-    void evaluateAlgorithm(int[] arr) {
+   void evaluateAlgorithm(int[] arr) {
         quickSort(arr,0,arr.length-1);
     }
 
@@ -22,7 +27,8 @@ public class QuickSort extends Algorithm {
       int i = left, j = right;
       int tmp;
       int pivot = arr[(left + right) / 2];
-     
+      //(int begin,int end,int pivotIndex,int[] array,boolean swap)
+      this.steps.add(new SetpAlgorithmsQuickSort(left,right,pivot,arr,false));
       while (i <= j) {
             while (arr[i] < pivot)
                   i++;
@@ -32,6 +38,7 @@ public class QuickSort extends Algorithm {
                   tmp = arr[i];
                   arr[i] = arr[j];
                   arr[j] = tmp;
+                  //Lista de pasos
                   i++;
                   j--;
             }

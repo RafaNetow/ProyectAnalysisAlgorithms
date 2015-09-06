@@ -9,6 +9,11 @@ package analysis.algorithms;
  *
  * @author Rafael
  */
-public class StepAlogithmsBinarySearch {
+public class StepAlogithmsBinarySearch extends Algorithm {
+
+    @Override
+    void evaluateAlgorithm(int[] array) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

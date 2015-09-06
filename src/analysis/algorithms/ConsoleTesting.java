@@ -15,9 +15,29 @@ public class ConsoleTesting {
   
    static QuickSort algorithmQuickSort = new QuickSort();  
    public static void main(String arg[]){
-   int [] myIntArray = {1,3,2,10,15,16};  
+   int [] myIntArray = {1,3,16,10,15,4};  
       algorithmQuickSort.evaluateAlgorithm(myIntArray);
-    java.util.Arrays.toString(myIntArray);
-       System.out.println(Arrays.toString(myIntArray));
+       printQuickSortStep(algorithmQuickSort);
+   
+   }
+
+public static void printQuickSortStep(QuickSort algoritm){
+    int i = 0;   
+   
+    while(i<algoritm.steps.size()){
+ 
+        SetpAlgorithmsQuickSort stepsQuick = (SetpAlgorithmsQuickSort)algoritm.steps.get(i);        
+//Object o = "str";
+        //String str = (String)o;
+        
+            System.out.println(stepsQuick.begin);
+            System.out.println(stepsQuick.end);
+            System.out.println(stepsQuick.pivotIndex);
+            System.out.println(Arrays.toString(stepsQuick.array));
+            
+        i++;
     }
 }
+}
+
+    
