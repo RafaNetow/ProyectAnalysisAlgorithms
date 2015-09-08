@@ -28,7 +28,7 @@ public class QuickSort extends Algorithm {
       int tmp;
       int pivot = arr[(left + right) / 2];
       //(int begin,int end,int pivotIndex,int[] array,boolean swap)
-      this.steps.add(new SetpAlgorithmsQuickSort(left,right,pivot,arr,false));
+  //    this.steps.add(new SetpAlgorithmsQuickSort(left,right,pivot,arr,false));
       while (i <= j) {
             while (arr[i] < pivot)
                   i++;
@@ -48,7 +48,7 @@ public class QuickSort extends Algorithm {
 }
  
 void quickSort(int arr[], int left, int right) {
-      int index = partition(arr, left, right);
+    int index = partition(arr, left, right);
       if (left < index - 1)
             quickSort(arr, left, index - 1);
       if (index < right)

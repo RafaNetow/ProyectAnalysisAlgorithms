@@ -15,7 +15,7 @@ public class ConsoleTesting {
   
    static QuickSort algorithmQuickSort = new QuickSort();  
    public static void main(String arg[]){
-   int [] myIntArray = {1,3,16,10,15,4};  
+   int [] myIntArray = {3,1,2};  
       algorithmQuickSort.evaluateAlgorithm(myIntArray);
        printQuickSortStep(algorithmQuickSort);
    
@@ -30,9 +30,9 @@ public static void printQuickSortStep(QuickSort algoritm){
 //Object o = "str";
         //String str = (String)o;
         
-            System.out.println(stepsQuick.begin);
-            System.out.println(stepsQuick.end);
-            System.out.println(stepsQuick.pivotIndex);
+            System.out.println("left: "+stepsQuick.begin);
+            System.out.println("right: "+stepsQuick.end);
+            System.out.println("pivot: "+stepsQuick.pivotIndex);
             System.out.println(Arrays.toString(stepsQuick.array));
             
         i++;
