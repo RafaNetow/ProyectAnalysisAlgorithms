@@ -28,19 +28,25 @@ public class QuickSort extends Algorithm {
       int tmp;
       int pivot = arr[(left + right) / 2];
       //(int begin,int end,int pivotIndex,int[] array,boolean swap)
-  //    this.steps.add(new SetpAlgorithmsQuickSort(left,right,pivot,arr,false));
+    this.steps.add(new SetpAlgorithmsQuickSort(left,right,pivot,arr,false));
       while (i <= j) {
-            while (arr[i] < pivot)
+            while (arr[i] < pivot){
                   i++;
-            while (arr[j] > pivot)
+             this.steps.add(new SetpAlgorithmsQuickSort(left,right,pivot,arr,false));
+            }
+             while (arr[j] > pivot){
                   j--;
-            if (i <= j) {
+               this.steps.add(new SetpAlgorithmsQuickSort(left,right,pivot,arr,false));
+             }
+               if (i <= j) {
                   tmp = arr[i];
                   arr[i] = arr[j];
                   arr[j] = tmp;
                   //Lista de pasos
+            this.steps.add(new SetpAlgorithmsQuickSort(left,right,pivot,arr,true));
                   i++;
                   j--;
+                 this.steps.add(new SetpAlgorithmsQuickSort(left,right,pivot,arr,false));
             }
       };
      

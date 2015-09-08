@@ -34,8 +34,9 @@ public static void printQuickSortStep(QuickSort algoritm){
             System.out.println("right: "+stepsQuick.end);
             System.out.println("pivot: "+stepsQuick.pivotIndex);
             System.out.println(Arrays.toString(stepsQuick.array));
-            
-        i++;
+            System.out.println("Swap: "+stepsQuick.swap);
+            i++;
+        
     }
 }
 }
