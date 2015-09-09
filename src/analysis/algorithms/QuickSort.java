@@ -27,26 +27,28 @@ public class QuickSort extends Algorithm {
       int i = left, j = right;
       int tmp;
       int pivot = arr[(left + right) / 2];
+      int [] currentArray = arrayCopy(arr);
       //(int begin,int end,int pivotIndex,int[] array,boolean swap)
-    this.steps.add(new SetpAlgorithmsQuickSort(left,right,pivot,arr,false));
+    this.steps.add(new SetpAlgorithmsQuickSort(i,j,pivot,currentArray,false));
       while (i <= j) {
             while (arr[i] < pivot){
                   i++;
-             this.steps.add(new SetpAlgorithmsQuickSort(left,right,pivot,arr,false));
+             this.steps.add(new SetpAlgorithmsQuickSort(i,j,pivot,currentArray,false));
             }
              while (arr[j] > pivot){
                   j--;
-               this.steps.add(new SetpAlgorithmsQuickSort(left,right,pivot,arr,false));
+               this.steps.add(new SetpAlgorithmsQuickSort(i,j,pivot,currentArray,false));
              }
                if (i <= j) {
                   tmp = arr[i];
                   arr[i] = arr[j];
                   arr[j] = tmp;
                   //Lista de pasos
-            this.steps.add(new SetpAlgorithmsQuickSort(left,right,pivot,arr,true));
+                  currentArray = arrayCopy(arr);
+                  this.steps.add(new SetpAlgorithmsQuickSort(i,j,pivot,currentArray,true));
                   i++;
                   j--;
-                 this.steps.add(new SetpAlgorithmsQuickSort(left,right,pivot,arr,false));
+                 this.steps.add(new SetpAlgorithmsQuickSort(i,j,pivot,currentArray,false));
             }
       };
      
@@ -59,5 +61,13 @@ void quickSort(int arr[], int left, int right) {
             quickSort(arr, left, index - 1);
       if (index < right)
             quickSort(arr, index, right);
+}
+
+
+int[] arrayCopy(int[] arr)
+{
+    int[] newArr=new int[arr.length];
+        System.arraycopy(arr, 0, newArr, 0, arr.length);
+    return newArr;
 }
 }
