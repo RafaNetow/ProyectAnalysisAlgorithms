@@ -15,7 +15,7 @@ public class SetpAlgorithmsQuickSort extends StepAlgorithms {
     int pivotIndex;
     boolean swap;
     public SetpAlgorithmsQuickSort(int begin,int end,int pivotIndex,int[] array,boolean swap) {
-        super(array);
+    super(array);
     this.begin = begin;
     this.end = end;
     this.pivotIndex = pivotIndex;
