@@ -14,11 +14,17 @@ import java.util.Arrays;
 public class ConsoleTesting {
   
    static QuickSort algorithmQuickSort = new QuickSort();  
+   static BinarySearch algorithmBinarySearch = new BinarySearch();
    public static void main(String arg[]){
    int [] myIntArray = {3,1,2};  
       algorithmQuickSort.evaluateAlgorithm(myIntArray);
        printQuickSortStep(algorithmQuickSort);
-   
+   int [] ArrayToBinarySearch = {1,2,3,4,5,6,7};
+    algorithmBinarySearch.setKey(10);
+    algorithmBinarySearch.evaluateAlgorithm(myIntArray);
+       System.out.println(algorithmBinarySearch.numFound);
+    
+       
    }
 
 public static void printQuickSortStep(QuickSort algoritm){

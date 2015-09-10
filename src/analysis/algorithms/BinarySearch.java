@@ -12,14 +12,18 @@ package analysis.algorithms;
 public class BinarySearch extends Algorithm {
 
     int key;
+    boolean numFound = false;
 
+    public void setNumFound(boolean numFound) {
+        this.numFound = numFound;
+    }
     public void setKey(int key) {
         this.key = key;
     }
     
     @Override
     void evaluateAlgorithm(int[] array) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      this.numFound =   binarySearch(array,this.key,array.length);
     }
 
     
