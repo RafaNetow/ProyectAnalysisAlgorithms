@@ -30,7 +30,9 @@ public class QuickSort extends Algorithm {
       int [] currentArray = arrayCopy(arr);
       //(int begin,int end,int pivotIndex,int[] array,boolean swap)
     this.steps.add(new SetpAlgorithmsQuickSort(i,j,pivot,currentArray,false));
-      while (i <= j) {
+      
+ 
+    while (i <= j) {
             while (arr[i] < pivot){
                   i++;
              this.steps.add(new SetpAlgorithmsQuickSort(i,j,pivot,currentArray,false));
@@ -49,7 +51,10 @@ public class QuickSort extends Algorithm {
                   i++;
                   j--;
                  this.steps.add(new SetpAlgorithmsQuickSort(i,j,pivot,currentArray,false));
-            }
+                   System.out.println( System.identityHashCode(steps.get(0).array));
+                    System.out.println(System.identityHashCode(steps.get(1).array));
+             
+               }
       };
      
       return i;

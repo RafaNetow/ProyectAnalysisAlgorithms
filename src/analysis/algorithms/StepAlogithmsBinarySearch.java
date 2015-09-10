@@ -9,11 +9,25 @@ package analysis.algorithms;
  *
  * @author Rafael
  */
-public class StepAlogithmsBinarySearch extends Algorithm {
+public class StepAlogithmsBinarySearch extends StepAlgorithms {
 
-    @Override
-    void evaluateAlgorithm(int[] array) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+  
+    int indexLo;
+    int indexHi;
+    int mid;
+    int compareWith;
+    
+            
+    
+    public StepAlogithmsBinarySearch(int[] array,int indexLo,int indexHi,int CompareWith, int mid) {
+        super(array);
+        this.indexLo = indexLo;
+        this.indexHi = indexHi;
+        this.compareWith = CompareWith;
+        this.mid = mid;
+     
     }
+
+   
     
 }
