@@ -1,8 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
+
 package analysis.algorithms;
 import java.awt.event.MouseEvent;
 import java.awt.Dimension;
@@ -35,6 +32,7 @@ public class GraphicalMain extends JFrame {
     private JButton buttonPlay;
     private JButton buttonOnwards;
     private JButton buttonStepByStep;
+    char [] currentArray;
     
     public static HashMap getHash(){
         return hashM;
@@ -42,7 +40,16 @@ public class GraphicalMain extends JFrame {
     public static mxGraph getGraph(){
         return graph;
     } 
-
+     
+    public static void drawArray(char currentArray[],JTextField texto){
+                for(int i =0; i<texto.getText().length();i++){
+                  currentArray[i] = texto.getText().charAt(i);
+             
+                  AddVisualElement add = new AddVisualElement(String.valueOf(currentArray[i]));    
+            } 
+                
+   }
+    
     public GraphicalMain(){
         super("Algorithms");
         initGUI();
@@ -69,8 +76,8 @@ public class GraphicalMain extends JFrame {
         getContentPane().add(buttonBack);
         buttonBack.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                 AddVisualElement add = new AddVisualElement(texto.getText());
-                texto.setText("");
+                currentArray = new char[texto.getText().length()];
+                drawArray(currentArray,texto);
                   
                 JOptionPane.showMessageDialog(null, "Add Back Presionado");
             }
