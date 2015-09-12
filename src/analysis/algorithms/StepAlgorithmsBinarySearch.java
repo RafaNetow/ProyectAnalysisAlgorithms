@@ -9,21 +9,17 @@ package analysis.algorithms;
  *
  * @author Rafael
  */
-public class StepAlogithmsBinarySearch extends StepAlgorithms {
+public class StepAlgorithmsBinarySearch extends StepAlgorithms {
 
   
     int indexLo;
     int indexHi;
-    int mid;
-    int compareWith;
+    int mid;           
     
-            
-    
-    public StepAlogithmsBinarySearch(int[] array,int indexLo,int indexHi,int CompareWith, int mid) {
+    public StepAlgorithmsBinarySearch(int[] array,int indexLo,int indexHi, int mid) {
         super(array);
         this.indexLo = indexLo;
         this.indexHi = indexHi;
-        this.compareWith = CompareWith;
         this.mid = mid;
      
     }

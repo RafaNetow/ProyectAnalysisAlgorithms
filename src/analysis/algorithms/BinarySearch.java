@@ -31,17 +31,20 @@ public class BinarySearch extends Algorithm {
     {
          int low = 0;
          int high = size - 1;
-          
+         int []currentArray = data;
          while(high >= low) {
              int middle = (low + high) / 2;
+            steps.add(new StepAlgorithmsBinarySearch(currentArray,low,high,middle));
              if(data[middle] == key) {
                  return true;
              }
              if(data[middle] < key) {
                  low = middle + 1;
+               steps.add(new StepAlgorithmsBinarySearch(currentArray,low,high,middle));
              }
              if(data[middle] > key) {
                  high = middle - 1;
+                   steps.add(new StepAlgorithmsBinarySearch(currentArray,low,high,middle));
              }
         }
         return false;

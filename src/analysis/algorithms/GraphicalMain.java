@@ -21,7 +21,8 @@ import com.mxgraph.view.mxGraph;
  *
  * @author Rafael
  */
-public class Principal extends JFrame {
+public class GraphicalMain extends JFrame {
+   
     protected static mxGraph graph = new mxGraph();
     protected static HashMap hashM = new HashMap();
    private mxGraphComponent graphComponent;
@@ -34,9 +35,15 @@ public class Principal extends JFrame {
     private JButton buttonPlay;
     private JButton buttonOnwards;
     private JButton buttonStepByStep;
-  
+    
+    public static HashMap getHash(){
+        return hashM;
+    }
+    public static mxGraph getGraph(){
+        return graph;
+    } 
 
-    public Principal(){
+    public GraphicalMain(){
         super("Algorithms");
         initGUI();
     

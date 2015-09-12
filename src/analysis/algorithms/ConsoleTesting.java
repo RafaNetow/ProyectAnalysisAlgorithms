@@ -19,14 +19,25 @@ public class ConsoleTesting {
    int [] myIntArray = {3,1,2};  
       algorithmQuickSort.evaluateAlgorithm(myIntArray);
        printQuickSortStep(algorithmQuickSort);
-   int [] ArrayToBinarySearch = {1,2,3,4,5,6,7};
-    algorithmBinarySearch.setKey(10);
-    algorithmBinarySearch.evaluateAlgorithm(myIntArray);
-       System.out.println(algorithmBinarySearch.numFound);
+   int [] ArrayToBinarySearch = {1,2,3,4,5,6,7,8,9,10};
+    algorithmBinarySearch.setKey(2);
+    algorithmBinarySearch.evaluateAlgorithm(ArrayToBinarySearch);
+    printBinarySearch(algorithmBinarySearch);
+    System.out.println("Binary Encontrado: " +algorithmBinarySearch.numFound);
     
        
    }
-
+public static void printBinarySearch(BinarySearch algorithm){
+  int i = 0;
+  while(i<algorithm.steps.size()){
+      StepAlgorithmsBinarySearch stepBinary = (StepAlgorithmsBinarySearch)algorithm.steps.get(i);
+      System.out.println("IndiexHi: "+stepBinary.indexHi);
+      System.out.println("IndexLo: "+stepBinary.indexLo);
+      System.out.println("Mid: "+stepBinary.mid);
+      
+      i++;
+  }
+}
 public static void printQuickSortStep(QuickSort algoritm){
     int i = 0;   
    
@@ -45,6 +56,7 @@ public static void printQuickSortStep(QuickSort algoritm){
         
     }
 }
+    
 }
 
     

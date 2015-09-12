@@ -5,18 +5,10 @@
  */
 package analysis.algorithms;
 
-import javax.swing.JFrame;
-
 /**
  *
  * @author Rafael
  */
-public class Main  {
-    public Main(){
-        GraphicalMain a = new GraphicalMain();
-        a.setVisible(true);
-    }
-    public static void main(String args[]){
-       new Main(); 
-    }
+public class GraphicalPrincipal {
+    
 }
