@@ -65,12 +65,14 @@ public class GraphicalMain extends JFrame {
         texto.setPreferredSize(new Dimension(420, 21));
         setLayout(new FlowLayout(FlowLayout.LEFT));
         
-         buttonBack = new JButton("Back");
+         buttonBack = new JButton("Add");
         getContentPane().add(buttonBack);
         buttonBack.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                 AddVisualElement add = new AddVisualElement(texto.getText());
                 texto.setText("");
-                JOptionPane.showMessageDialog(null, "Button Back Presionado");
+                  
+                JOptionPane.showMessageDialog(null, "Add Back Presionado");
             }
         });
     
