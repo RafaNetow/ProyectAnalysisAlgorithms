@@ -32,20 +32,18 @@ public class GraphicalMain extends JFrame {
     private JButton buttonPlay;
     private JButton buttonOnwards;
     private JButton buttonStepByStep;
-    char [] currentArray;
-    
+    int [] currentArray ;
     public static HashMap getHash(){
         return hashM;
     }
     public static mxGraph getGraph(){
         return graph;
     } 
-     
-    public static void drawArray(char currentArray[],JTextField texto){
-                for(int i =0; i<texto.getText().length();i++){
-                  currentArray[i] = texto.getText().charAt(i);
-             
-                  AddVisualElement add = new AddVisualElement(String.valueOf(currentArray[i]),50*i,110,"rectangle","green","white");    
+ 
+    public static void drawArray(int currentArray[],JTextField texto){
+                for(int i =0; i<=texto.getText().length();i++){
+                  currentArray[i] = Character.getNumericValue(texto.getText().charAt(i));
+                  AddVisualElement add = new AddVisualElement(String.valueOf(texto.getText().charAt(i)),50*i,110,"rectangle","green","white");    
             //  Object v1 = this.getGraph().insertVertex(parent, null, number, 20, 110, 50, 50,"shape=rectangle;strokeColor=red;fillColor=white"); 
                 } 
                 
@@ -75,13 +73,20 @@ public class GraphicalMain extends JFrame {
         
          buttonBack = new JButton("Add");
         getContentPane().add(buttonBack);
+        
+       
         buttonBack.addActionListener(new ActionListener() {
+            
+            
             public void actionPerformed(ActionEvent e) {
-                currentArray = new char[texto.getText().length()];
+             
+                currentArray = new int[texto.getText().length()];
+                 
                 drawArray(currentArray,texto);
-                  
+               
                 JOptionPane.showMessageDialog(null, "Add Back Presionado");
-            }
+            
+                     }
         });
     
         buttonPlay = new JButton("Play");
