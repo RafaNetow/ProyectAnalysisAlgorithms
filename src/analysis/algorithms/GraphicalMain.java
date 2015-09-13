@@ -45,8 +45,9 @@ public class GraphicalMain extends JFrame {
                 for(int i =0; i<texto.getText().length();i++){
                   currentArray[i] = texto.getText().charAt(i);
              
-                  AddVisualElement add = new AddVisualElement(String.valueOf(currentArray[i]));    
-            } 
+                  AddVisualElement add = new AddVisualElement(String.valueOf(currentArray[i]),50*i,110,"rectangle","green","white");    
+            //  Object v1 = this.getGraph().insertVertex(parent, null, number, 20, 110, 50, 50,"shape=rectangle;strokeColor=red;fillColor=white"); 
+                } 
                 
    }
     

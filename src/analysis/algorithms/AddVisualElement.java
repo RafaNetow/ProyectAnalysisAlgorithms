@@ -15,10 +15,10 @@ package analysis.algorithms;
  */
 public class AddVisualElement extends GraphicalMain {
     
-    public AddVisualElement(String number){
+    public AddVisualElement(String number, int posx,int posy,String figure,String strokeColor,String fillColor){
         this.getGraph().getModel().beginUpdate();
          Object parent = this.getGraph().getDefaultParent();
-           Object v1 = this.getGraph().insertVertex(parent, null, number, 330, 30, 100, 50,"shape=rectangle");   
+           Object v1 = this.getGraph().insertVertex(parent, null, number, posx, posy, 50, 50,"shape="+figure+";strokeColor="+strokeColor+";fillColor="+fillColor);   
            this.getHash().put(number, v1);
         this.getGraph().getModel().endUpdate();
     }
