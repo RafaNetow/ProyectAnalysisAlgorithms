@@ -11,6 +11,8 @@ import java.util.HashMap;
 import javax.swing.*;
 import com.mxgraph.swing.mxGraphComponent;
 import com.mxgraph.view.mxGraph;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 
@@ -33,6 +35,7 @@ public class GraphicalMain extends JFrame {
     private JButton buttonOnwards;
     private JButton buttonStepByStep;
     int [] currentArray ;
+    int currentStep = -1;
     DrawAlgorithmSteps drawSteps = new DrawAlgorithmSteps();
     public static HashMap getHash(){
         return hashM;
@@ -94,25 +97,40 @@ public class GraphicalMain extends JFrame {
             public void actionPerformed(ActionEvent e){
               QuickSort currentQuickSort=  (QuickSort) currentAlgorithm;
                 currentQuickSort.evaluateAlgorithm(currentArray);
-                if(currentQuickSort instanceof QuickSort)
-                drawSteps.drawQuickSort(currentQuickSort,0);
-            }
+                if(currentQuickSort instanceof QuickSort){
+               int i = 0;
+               while(i<5){
+                   try {
+                       drawSteps.drawQuickSort(currentQuickSort,i);
+                       
+                       Thread.sleep(100);
+                       
+                       i++;} catch (InterruptedException ex) {
+                       Logger.getLogger(GraphicalMain.class.getName()).log(Level.SEVERE, null, ex);
+                   }
+               } 
+               }
+                }
         });
         
-        buttonOnwards = new JButton("Onward");
+        buttonOnwards = new JButton("Back");
         getContentPane().add(buttonOnwards);
         buttonOnwards.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                texto.setText("");
-                JOptionPane.showMessageDialog(null,"Button Onwards Presionado");
+                QuickSort currentQuickSort=  (QuickSort) currentAlgorithm;
+                currentQuickSort.evaluateAlgorithm(currentArray);
+                        currentStep--;
+                drawSteps.drawQuickSort(currentQuickSort,currentStep);
             }
         });
-        buttonStepByStep = new JButton("StepByStep");
+        buttonStepByStep = new JButton("Next");
         getContentPane().add(buttonStepByStep);
         buttonStepByStep.addActionListener(new ActionListener(){
           public void actionPerformed(ActionEvent e){
-                texto.setText("");
-                JOptionPane.showMessageDialog(null,"Button StepBySep");
+                 QuickSort currentQuickSort=  (QuickSort) currentAlgorithm;      
+                currentQuickSort.evaluateAlgorithm(currentArray);
+                  currentStep++;
+                drawSteps.drawQuickSort(currentQuickSort,currentStep);
             }
         });
         

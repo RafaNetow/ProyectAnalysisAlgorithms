@@ -23,13 +23,14 @@ public class DrawAlgorithmSteps  {
        if(stepsQuick.begin == o){
        AddVisualElement add = new AddVisualElement(Integer.toString(stepsQuick.array[o]),50*o,110,"rectangle","green","green");  }
           
-       if(stepsQuick.end==o){
+      else if(stepsQuick.end==o){
          AddVisualElement add = new AddVisualElement(Integer.toString(stepsQuick.array[o]),50*o,110,"rectangle","green","green");
        }
-        if(stepsQuick.pivotIndex==o){
+       else if(stepsQuick.pivotIndex==o){
         AddVisualElement add = new AddVisualElement(Integer.toString(stepsQuick.array[o]),50*o,110,"rectangle","green","blue");
+        }else {
+             AddVisualElement add = new AddVisualElement(Integer.toString(stepsQuick.array[o]),50*o,110,"rectangle","green","white");
         }
-        
            }
     
     
