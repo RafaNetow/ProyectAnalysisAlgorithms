@@ -33,6 +33,7 @@ public class GraphicalMain extends JFrame {
     private JButton buttonOnwards;
     private JButton buttonStepByStep;
     int [] currentArray ;
+    DrawAlgorithmSteps drawSteps = new DrawAlgorithmSteps();
     public static HashMap getHash(){
         return hashM;
     }
@@ -41,7 +42,7 @@ public class GraphicalMain extends JFrame {
     } 
  
     public static void drawArray(int currentArray[],JTextField texto){
-                for(int i =0; i<=texto.getText().length();i++){
+                for(int i =0; i<texto.getText().length();i++){
                   currentArray[i] = Character.getNumericValue(texto.getText().charAt(i));
                   AddVisualElement add = new AddVisualElement(String.valueOf(texto.getText().charAt(i)),50*i,110,"rectangle","green","white");    
             //  Object v1 = this.getGraph().insertVertex(parent, null, number, 20, 110, 50, 50,"shape=rectangle;strokeColor=red;fillColor=white"); 
@@ -83,8 +84,6 @@ public class GraphicalMain extends JFrame {
                 currentArray = new int[texto.getText().length()];
                  
                 drawArray(currentArray,texto);
-               
-                JOptionPane.showMessageDialog(null, "Add Back Presionado");
             
                      }
         });
@@ -93,8 +92,10 @@ public class GraphicalMain extends JFrame {
         getContentPane().add(buttonPlay);
         buttonPlay.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                texto.setText("");
-                 JOptionPane.showMessageDialog(null,"Button Play Pressionado");
+              QuickSort currentQuickSort=  (QuickSort) currentAlgorithm;
+                currentQuickSort.evaluateAlgorithm(currentArray);
+                if(currentQuickSort instanceof QuickSort)
+                drawSteps.drawQuickSort(currentQuickSort,0);
             }
         });
         

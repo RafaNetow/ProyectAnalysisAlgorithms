@@ -43,7 +43,7 @@ public static void printQuickSortStep(QuickSort algoritm){
    
     while(i<algoritm.steps.size()){
  
-        SetpAlgorithmsQuickSort stepsQuick = (SetpAlgorithmsQuickSort)algoritm.steps.get(i);        
+        StepAlgorithmsQuickSort stepsQuick = (StepAlgorithmsQuickSort)algoritm.steps.get(i);        
 //Object o = "str";
         //String str = (String)o;
         

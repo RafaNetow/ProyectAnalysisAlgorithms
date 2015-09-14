@@ -29,17 +29,17 @@ public class QuickSort extends Algorithm {
       int pivot = arr[(left + right) / 2];
       int [] currentArray = arrayCopy(arr);
       //(int begin,int end,int pivotIndex,int[] array,boolean swap)
-    this.steps.add(new SetpAlgorithmsQuickSort(i,j,pivot,currentArray,false));
+    this.steps.add(new StepAlgorithmsQuickSort(i,j,pivot,currentArray,false));
       
  
     while (i <= j) {
             while (arr[i] < pivot){
                   i++;
-             this.steps.add(new SetpAlgorithmsQuickSort(i,j,pivot,currentArray,false));
+             this.steps.add(new StepAlgorithmsQuickSort(i,j,pivot,currentArray,false));
             }
              while (arr[j] > pivot){
                   j--;
-               this.steps.add(new SetpAlgorithmsQuickSort(i,j,pivot,currentArray,false));
+               this.steps.add(new StepAlgorithmsQuickSort(i,j,pivot,currentArray,false));
              }
                if (i <= j) {
                   tmp = arr[i];
@@ -47,10 +47,10 @@ public class QuickSort extends Algorithm {
                   arr[j] = tmp;
                   //Lista de pasos
                   currentArray = arrayCopy(arr);
-                  this.steps.add(new SetpAlgorithmsQuickSort(i,j,pivot,currentArray,true));
+                  this.steps.add(new StepAlgorithmsQuickSort(i,j,pivot,currentArray,true));
                   i++;
                   j--;
-                 this.steps.add(new SetpAlgorithmsQuickSort(i,j,pivot,currentArray,false));
+                 this.steps.add(new StepAlgorithmsQuickSort(i,j,pivot,currentArray,false));
                    System.out.println( System.identityHashCode(steps.get(0).array));
                     System.out.println(System.identityHashCode(steps.get(1).array));
              
